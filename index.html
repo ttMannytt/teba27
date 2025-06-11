@@ -492,128 +492,184 @@ var x = setInterval(function() {
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-  
-      
-       
-       
-       
-       
-       
-       
-       
-      
-      <div class="section single-column-section  large-content-spacing-top large-content-spacing-bottom top-shadow" data-section-behavior="storybook-single-column" data-layer="1" data-layer-name="over">
-        <div class="section-view">
-          <div class="section-content">
-            <div class="section-content-view">
-              <div class="content-container">
-                          <h3 class=" text-center" >Galería<br><br></h3>
+      <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+  }
 
+  .galeria {
+    padding: 40px;
+    text-align: center;
+  }
 
- <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-    }
+  .galeria h2 {
+    margin-bottom: 20px;
+  }
 
-    .galeria {
-      padding: 40px;
-      text-align: center;
-    }
+  .fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-    .galeria h2 {
-      margin-bottom: 20px;
-    }
+  .foto {
+    flex: 1 1 250px;
+    max-width: 250px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
 
-    .fotos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
+  .foto:hover {
+    transform: scale(1.05);
+  }
 
+  .foto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
     .foto {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      flex: 1 1 calc(50% - 15px);
+      max-width: calc(50% - 15px);
     }
+  }
 
-    .foto:hover {
-      transform: scale(1.05);
-    }
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+  }
 
-    .foto img {
-      width: 250px;
-      height: 160px;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
-    }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
 
-    /* Lightbox estilo simple */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
+  .lightbox .controles {
+    margin-top: 15px;
+    display: flex;
+    gap: 30px;
+  }
 
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-  </style>
+  .lightbox .boton {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+  }
 
-  <section class="Galeria">
-    <h2>Nuestros Recuerdos</h2>
-    <div class="fotos">
-      <div class="foto"><img src="galeria/image1.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/image2.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/IMG_0759.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/IMG_0760.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/foto1.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/foto2.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/foto3.jpg" onclick="abrirLightbox(this.src)"></div>
-      <div class="foto"><img src="galeria/foto4.jpg" onclick="abrirLightbox(this.src)"></div>
-    </div>
-  </section>
+  .lightbox .boton:hover {
+    transform: scale(1.2);
+  }
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" onclick="cerrarLightbox()">
-    <img id="imagenGrande" src="">
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+</style>
+
+<section class="galeria">
+  <h2>Nuestros Recuerdos</h2>
+  <div class="fotos">
+    <div class="foto"><img src="galeria/image1.jpg" alt="1" onclick="abrirLightbox(0)"></div>
+    <div class="foto"><img src="galeria/image2.jpg" alt="2" onclick="abrirLightbox(1)"></div>
+    <div class="foto"><img src="galeria/IMG_0759.jpg" alt="3" onclick="abrirLightbox(2)"></div>
+    <div class="foto"><img src="galeria/IMG_0760.jpg" alt="4" onclick="abrirLightbox(3)"></div>
+    <div class="foto"><img src="galeria/foto1.jpg" alt="5" onclick="abrirLightbox(4)"></div>
+    <div class="foto"><img src="galeria/foto2.jpg" alt="6" onclick="abrirLightbox(5)"></div>
+    <div class="foto"><img src="galeria/foto3.jpg" alt="7" onclick="abrirLightbox(6)"></div>
+    <div class="foto"><img src="galeria/foto4.jpg" alt="8" onclick="abrirLightbox(7)"></div>
   </div>
+</section>
 
-  <script>
-    function abrirLightbox(src) {
-      document.getElementById("imagenGrande").src = src;
-      document.getElementById("lightbox").style.display = "flex";
-    }
+<!-- Lightbox con controles -->
+<div class="lightbox" id="lightbox" onclick="cerrarLightbox(event)">
+  <img id="imagenGrande" src="" alt="">
+  <div class="controles">
+    <span class="boton" onclick="cambiarImagen(-1)">⟨</span>
+    <span class="boton" onclick="cambiarImagen(1)">⟩</span>
+  </div>
+</div>
 
-    function cerrarLightbox() {
+<script>
+  const imagenes = [
+    "galeria/image1.jpg",
+    "galeria/image2.jpg",
+    "galeria/IMG_0759.jpg",
+    "galeria/IMG_0760.jpg",
+    "galeria/foto1.jpg",
+    "galeria/foto2.jpg",
+    "galeria/foto3.jpg",
+    "galeria/foto4.jpg"
+  ];
+
+  let imagenActual = 0;
+
+  function abrirLightbox(index) {
+    imagenActual = index;
+    document.getElementById("imagenGrande").src = imagenes[imagenActual];
+    document.getElementById("lightbox").style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function cerrarLightbox(e) {
+    // Solo cerrar si se hace clic fuera de la imagen
+    if (e.target.id === "lightbox") {
       document.getElementById("lightbox").style.display = "none";
+      document.body.style.overflow = "";
     }
-  </script>
+  }
+
+  function cambiarImagen(direccion) {
+    imagenActual += direccion;
+    if (imagenActual < 0) imagenActual = imagenes.length - 1;
+    if (imagenActual >= imagenes.length) imagenActual = 0;
+    document.getElementById("imagenGrande").src = imagenes[imagenActual];
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (document.getElementById("lightbox").style.display === "flex") {
+      if (e.key === "ArrowRight") cambiarImagen(1);
+      if (e.key === "ArrowLeft") cambiarImagen(-1);
+      if (e.key === "Escape") {
+        document.getElementById("lightbox").style.display = "none";
+        document.body.style.overflow = "";
+      }
+    }
+  });
+</script>
+      
+      
+      
+      
+      
+      
+      
+      
+
 
 
 
