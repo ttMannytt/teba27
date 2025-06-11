@@ -45,8 +45,8 @@ input[type="reset"],
 input[type="button"],
 button {
     font-family: 'Nunito Sans', sans-serif;
-    background: #dd8a8f;
-    border: 1px solid #dd8a8f;
+    background: #00ac1a;
+    border: 1px solid #00ac1a;
     color: #fff;
     padding: 5px 30px;
     margin: 0;
@@ -59,7 +59,7 @@ button {
 }
       .storybook-theme .single-column-section .section-background,
       .storybook-theme .title-section {
-        background-color: #9aa6af;
+        background-color: #00ac1a;
       }
 
       .storybook-theme .title-header {
@@ -1601,7 +1601,7 @@ underline;
     -ms-transform-origin:0 0;
     -o-transform-origin:0 0;
     transform-origin:0 0;
-    background-color:#dd8a8f;
+    background-color:#00ac1a;
     letter-spacing:3px;
     font-family:montserrat;
     color:#fff;
@@ -1698,13 +1698,13 @@ underline;
     font-family:'Alex Brush', cursive;
     font-weight: 400;
     font-size: 38px;
-    color: #dd8a8f;
+    color: #00ac1a;
     margin-bottom: 0;
 	
 }
 #countdown .section-head h4 {
     position: relative;
-    color: #dd8a8f;
+    color: #00ac1a;
     font-family: "Playfair Display", serif;
     font-weight: 400;
     font-size: 40px;
@@ -1740,7 +1740,7 @@ underline;
     font-family: "Playfair Display", serif;
     font-size: 60px;
     font-weight: 700;
-    color: #dd8a8f;
+    color: #00ac1a;
     letter-spacing: -1px;
 }
 @media all and (max-width: 768px) {
