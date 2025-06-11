@@ -795,10 +795,88 @@ var x = setInterval(function() {
      
     </div>
   </div>
-  <!-- javascripts go here -->
-    
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="musicaOff hidden" id="sonidoMusicaOff" style="cursor: pointer;">
+  <i class="fa fa-volume-up flotante" id="iconoMusica"></i>
+</div>
+<div class="musicaOn" id="sonidoMusicaOn" style="cursor: pointer;">
+  <img src="sound1.gif" alt="Sonido activado">
+</div>
+
+<audio id="musica" loop muted>
+  <source src="js/music.mp3" type="audio/mp3">
+</audio>
+
+<!-- Eliminé el botón oculto que no se usaba -->
+
+<div class="modal fade" id="modalBienvenida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-audio">
+      <h3>Bienvenidos</h3>
+      <div class="text-center mb-3" id="boton-modal">
+        <button type="button" class="btn btn-primary w-50 rounded-pill b1 text-transform">INGRESAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery.countdown.js"></script>
+
+<script>
+  $(document).ready(function() {
+
+    $(window).on('load', function() {
+      $('#modalBienvenida').modal('show');
+    });
+
+    $("#boton-modal button").click(function() {
+      $('#modalBienvenida').modal('hide');
+      var audio = document.getElementById("musica");
+      audio.muted = false; 
+      audio.play();
+    });
+
+    $("#modalBienvenida").on("click", function() {
+      var audio = document.getElementById("musica");
+      audio.muted = false;
+      audio.play();
+    });
+
+    $("#sonidoMusicaOff").click(function() {
+      var audio = document.getElementById("musica");
+      $("#sonidoMusicaOn").removeClass("hidden");
+      $("#sonidoMusicaOff").addClass("hidden");
+      audio.muted = false;
+      audio.play();
+    });
+
+    $("#sonidoMusicaOn").click(function() {
+      var audio = document.getElementById("musica");
+      $("#sonidoMusicaOff").removeClass("hidden");
+      $("#sonidoMusicaOn").addClass("hidden");
+      audio.pause();
+    });
+
+  });
+</script>
+
+
+
+
+
+	  <!-- javascripts go here este codigo es el bueno
     
 <div class="musicaOff hidden" target="_blank" id="sonidoMusicaOff" style="cursor: pointer;">
 <i class="fa fa-volume-up flotante" id="iconoMusica"></i>
@@ -852,8 +930,8 @@ var x = setInterval(function() {
                 var audio = document.getElementById("musica");
                 $("#sonidoMusicaOn").removeClass( "hidden" );
                 $("#sonidoMusicaOff").addClass( "hidden" );
-                audio.play(); // without this line it's not working although I have "muted" in HTML
-            });
+                audio.play(); // without this line it's not  although I have "muted" in HTML
+            });working
 
             $("#sonidoMusicaOn").click(function() {
                 var audio = document.getElementById("musica");
@@ -863,7 +941,7 @@ var x = setInterval(function() {
             });
 			});
 
-</script>
+</script>-->
      
         
         
