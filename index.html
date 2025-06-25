@@ -234,21 +234,13 @@
         <div class="section-view">
           <div class="section-content">
             <div class="section-content-view">
+            <div class="content-container">
+                      <div class="image">
+                  <div class="image-wrapper">
+                    <a><span class="image-placeholder-link" data-href="/images/fecha.png" style="width: 1080px; padding-top: 100%" data-image-width="1080" data-image-height="1080"></span></a>
             
             
-            
-           
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-              <div class="content-container">
+
                          
                            
                                 
@@ -257,20 +249,13 @@
           </div>
         </div>
       </div>
-      <div class="section full-width-section" data-section-behavior="storybook-full-width-photo" data-layer="0" data-layer-name="over">
-        <div class="section-view">
-          <div class="section-content">
-            <div class="section-content-view">
-              <div class="content-container">
-                      <div class="image">
-                  <div class="image-wrapper">
-                    <a><span class="image-placeholder-link" data-href="/images/fecha.png" style="width: 1080px; padding-top: 100%" data-image-width="1080" data-image-height="1080"></span></a>
+  
                     
                     
                      <!------------------------------->
             
             
-             <script>
+ <script>
 // Set the date we're counting down to
 var countDownDate = new Date("2025/07/05 4:00 PM").getTime();
 
@@ -489,21 +474,7 @@ var x = setInterval(function() {
         </div>
       </div>
 
- 	<div class="section window-section height-50 caption-left" data-section-behavior="storybook-window" data-layer="0" data-layer-name="over">
-        <div class="section-view">
-          <div class="window section-background">
-            <div role="img" class="section-background-image" style="background-position: 50% 50%;"><a class="background-image-placeholder-link" href="/images/portada.jpg" data-image-width="2550" data-image-height="3300"></a></div>
-          </div>
-       
-        </div>
-      </div>
-
-			
-
-
-
-
-
+ 	
 			
       
         <div class="section single-column-section  large-content-spacing-top large-content-spacing-bottom top-shadow" data-section-behavior="storybook-single-column" data-layer="1" data-layer-name="over">
@@ -514,117 +485,117 @@ var x = setInterval(function() {
                          
       
       <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-  }
+	  body {
+  	  font-family: Arial, sans-serif;
+   	 margin: 0;
+   	 background: #f4f4f4;
+ 	 }
 
-  .galeria {
-    padding: 40px;
-    text-align: center;
-  }
+ 	 .galeria {
+  	  padding: 40px;
+   	 text-align: center;
+	  }
 
-  .galeria h2 {
-    margin-bottom: 20px;
-  }
+ 	 .galeria h2 {
+  	  margin-bottom: 20px;
+  	}
 
-  .fotos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+  	.fotos {
+  	  display: flex;
+	    flex-wrap: wrap;
+   	 justify-content: center;
+   	 gap: 15px;
+ 	 }
 
-  .foto {
-    flex: 1 1 250px;
-    max-width: 250px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-  }
+  	.foto {
+  	  flex: 1 1 250px;
+  	  max-width: 250px;
+  	  position: relative;
+   	 overflow: hidden;
+   	 cursor: pointer;
+   	 border-radius: 10px;
+   	 box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+   	 transition: transform 0.3s;
+  	}
 
-  .foto:hover {
-    transform: scale(1.05);
-  }
+  	.foto:hover {
+   	 transform: scale(1.05);
+ 	 }
 
-  .foto img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-  }
+ 	 .foto img {
+  	  width: 100%;
+  	  height: 160px;
+  	  object-fit: cover;
+   	 transition: opacity 0.3s ease;
+ 	 }
 
-  @media (max-width: 768px) {
-    .foto {
-      flex: 1 1 calc(50% - 15px);
-      max-width: calc(50% - 15px);
-    }
-  }
+ 	 @media (max-width: 768px) {
+ 	   .foto {
+    	  flex: 1 1 calc(50% - 15px);
+    	  max-width: calc(50% - 15px);
+   	 }
+ 	 }
 
-  /* Lightbox */
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    animation: fadeIn 0.3s ease;
-  }
+	  /* Lightbox */
+  	.lightbox {
+  	  display: none;
+  	  position: fixed;
+  	  z-index: 999;
+  	  top: 0;
+  	  left: 0;
+  	  width: 100%;
+   	 height: 100%;
+   	 background: rgba(0,0,0,0.85);
+   	 justify-content: center;
+   	 align-items: center;
+   	 flex-direction: column;
+  	  animation: fadeIn 0.3s ease;
+ 	 }
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
+ 	 .lightbox img {
+  	  max-width: 90%;
+  	  max-height: 80%;
+  	  border-radius: 10px;
+  	  transition: transform 0.3s ease;
+  	}
 
-  .lightbox .controles {
-    margin-top: 15px;
-    display: flex;
-    gap: 30px;
-  }
+	  .lightbox .controles {
+  	  margin-top: 15px;
+  	  display: flex;
+  	  gap: 30px;
+  	}
 
-  .lightbox .boton {
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.2s;
-  }
+  	.lightbox .boton {
+  	  color: white;
+  	  font-size: 2rem;
+  	  cursor: pointer;
+  	  user-select: none;
+   	 transition: transform 0.2s;
+ 	 }
 
-  .lightbox .boton:hover {
-    transform: scale(1.2);
-  }
+ 	 .lightbox .boton:hover {
+  	  transform: scale(1.2);
+ 	 }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-</style>
+ 	 @keyframes fadeIn {
+  	  from { opacity: 0; }
+	    to   { opacity: 1; }
+  	}
+	</style>
 
-<section class="galeria">
-  <h2>Nuestros Recuerdos</h2>
-  <div class="fotos">
-    <div class="foto"><img src="galeria/image1.jpg" alt="1" onclick="abrirLightbox(0)"></div>
-    <div class="foto"><img src="galeria/image2.jpg" alt="2" onclick="abrirLightbox(1)"></div>
-    <div class="foto"><img src="galeria/IMG_0759.jpg" alt="3" onclick="abrirLightbox(2)"></div>
-    <div class="foto"><img src="galeria/IMG_0760.jpg" alt="4" onclick="abrirLightbox(3)"></div>
-    <div class="foto"><img src="galeria/foto1.jpg" alt="5" onclick="abrirLightbox(4)"></div>
-    <div class="foto"><img src="galeria/foto2.jpg" alt="6" onclick="abrirLightbox(5)"></div>
-    <div class="foto"><img src="galeria/foto3.jpg" alt="7" onclick="abrirLightbox(6)"></div>
-    <div class="foto"><img src="galeria/foto4.jpg" alt="8" onclick="abrirLightbox(7)"></div>
-  </div>
-</section>
+	<section class="galeria">
+	  <h2>Nuestros Recuerdos</h2>
+ 		 <div class="fotos">
+    	<div class="foto"><img src="galeria/image1.jpg" alt="1" onclick="abrirLightbox(0)"></div>
+    	<div class="foto"><img src="galeria/image2.jpg" alt="2" onclick="abrirLightbox(1)"></div>
+    	<div class="foto"><img src="galeria/IMG_0759.jpg" alt="3" onclick="abrirLightbox(2)"></div>
+    	<div class="foto"><img src="galeria/IMG_0760.jpg" alt="4" onclick="abrirLightbox(3)"></div>
+   	 <div class="foto"><img src="galeria/foto1.jpg" alt="5" onclick="abrirLightbox(4)"></div>
+   	 <div class="foto"><img src="galeria/foto2.jpg" alt="6" onclick="abrirLightbox(5)"></div>
+   	 <div class="foto"><img src="galeria/foto3.jpg" alt="7" onclick="abrirLightbox(6)"></div>
+   	 <div class="foto"><img src="galeria/foto4.jpg" alt="8" onclick="abrirLightbox(7)"></div>
+ 	 </div>
+	</section>
 
 <!-- Lightbox con controles -->
 <div class="lightbox" id="lightbox" onclick="cerrarLightbox(event)">
@@ -688,15 +659,6 @@ var x = setInterval(function() {
       
       
       
-      
-      
-
-
-
-
-
-
-
 				<p class=" text-center" ></p>
                             <div class="image">
                   <div class="image-wrapper">
