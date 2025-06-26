@@ -60,6 +60,8 @@
 
 
 </head>
+
+	
 <body class="">
   <div id="app">
    <div id="publication-viewer" class="publication-viewer">
@@ -592,7 +594,7 @@
    	 "galeria/img1.JPG,
    	 "galeria/img2.JPG,
    	 "galeria/img3.JPG,
-   	 "galeria/img4.JPG,
+   	 "galeria/img4.JPG
   	];
 
  	 let imagenActual = 0;
@@ -764,45 +766,45 @@
   </div>
 </div>
 
-<script src="js/jquery.countdown.js"></script>
+	<script src="js/jquery.countdown.js"></script>
 
-<script>
-  $(document).ready(function() {
+	<script>
+ 	 $(document).ready(function() {
 
-    $(window).on('load', function() {
-      $('#modalBienvenida').modal('show');
-    });
+   	 $(window).on('load', function() {
+    	  $('#modalBienvenida').modal('show');
+   	 });
 
-    $("#boton-modal button").click(function() {
-      $('#modalBienvenida').modal('hide');
-      var audio = document.getElementById("musica");
-      audio.muted = false; 
-      audio.play();
-    });
+   	 $("#boton-modal button").click(function() {
+    	  $('#modalBienvenida').modal('hide');
+    	  var audio = document.getElementById("musica");
+    	  audio.muted = false; 
+   	   audio.play();
+  	  });
 
-    $("#modalBienvenida").on("click", function() {
-      var audio = document.getElementById("musica");
-      audio.muted = false;
-      audio.play();
-    });
+   	 $("#modalBienvenida").on("click", function() {
+   	   var audio = document.getElementById("musica");
+   	   audio.muted = false;
+   	   audio.play();
+  	  });
 
-    $("#sonidoMusicaOff").click(function() {
-      var audio = document.getElementById("musica");
-      $("#sonidoMusicaOn").removeClass("hidden");
-      $("#sonidoMusicaOff").addClass("hidden");
-      audio.muted = false;
-      audio.play();
-    });
+  	  $("#sonidoMusicaOff").click(function() {
+    	  var audio = document.getElementById("musica");
+    	  $("#sonidoMusicaOn").removeClass("hidden");
+    	  $("#sonidoMusicaOff").addClass("hidden");
+    	  audio.muted = false;
+    	  audio.play();
+ 	   });
 
-    $("#sonidoMusicaOn").click(function() {
-      var audio = document.getElementById("musica");
-      $("#sonidoMusicaOff").removeClass("hidden");
-      $("#sonidoMusicaOn").addClass("hidden");
-      audio.pause();
-    });
-
-  });
-</script>
+  	  $("#sonidoMusicaOn").click(function() {
+    	  var audio = document.getElementById("musica");
+   	   $("#sonidoMusicaOff").removeClass("hidden");
+   	   $("#sonidoMusicaOn").addClass("hidden");
+   	   audio.pause();
+  	  });
+	
+ 	 });
+	</script>
 
 </body>
 </html>
